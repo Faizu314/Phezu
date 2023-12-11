@@ -1,0 +1,13 @@
+{
+  "name": "com.phezu.effectorsystem",
+  "version": "0.0.5",
+  "displayName": "Effector System",
+  "description": "General system for things to affect other things and get effected.",
+  "unity": "2021.3",
+  "dependencies": {
+    "com.phezu.util": "1.0.3"
+  },
+  "author": {
+    "name": "Phezu"
+  }
+}
