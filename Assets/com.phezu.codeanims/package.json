@@ -1,0 +1,10 @@
+{
+  "name": "com.phezu.codeanims",
+  "version": "1.0.0",
+  "displayName": "Code Anims",
+  "description": "This package has simple animations through code tweening.",
+  "unity": "2021.3",
+  "author": {
+    "name": "Phezu"
+  }
+}

@@ -5,7 +5,7 @@
   "description": "Its an inventory system.",
   "unity": "2021.3",
   "dependencies": {
-    "com.phezu.util": "1.0.3"
+    "com.phezu.util": "1.0.28"
   },
   "author": {
     "name": "Phezu"

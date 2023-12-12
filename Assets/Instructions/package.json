@@ -1,9 +1,12 @@
 {
-  "name": "com.phezu.util",
-  "version": "1.0.19",
-  "displayName": "Utilities",
-  "description": "This package has some common utility functionalities.",
+  "name": "com.phezu.example",
+  "version": "1.0.0",
+  "displayName": "Example",
+  "description": "This is an example.",
   "unity": "2019.1",
+  "dependencies": {
+
+  },
   "author": {
     "name": "Phezu"
   }

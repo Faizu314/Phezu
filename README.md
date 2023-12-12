@@ -1,8 +1,2 @@
-# InputPackage Add by URL
-# https://github.com/harrissaleem/UnityPackages.git?path=/Assets/com.zoistudio.inputmanager
-
-# Logger Add by URL
-# https://github.com/harrissaleem/UnityPackages.git?path=/Assets/com.zoistudio.logger
-
-# SceneManager Add by URL
-# https://github.com/harrissaleem/UnityPackages.git?path=/Assets/com.zoistudio.scenemanagement
+# Use this link in package manager
+# https://github.com/Faizu314/Phezu.git?path=/Assets/com.phezu.<packagename>

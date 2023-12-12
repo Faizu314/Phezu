@@ -1,0 +1,19 @@
+{
+    "name": "Phezu.HyperCasual.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:d9026699d1fd1d64890c1838c9753e73",
+        "GUID:a57059e16163a0841844021713a3c003",
+        "GUID:f4d171f2622bd974ca6cc5c82276a59d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
