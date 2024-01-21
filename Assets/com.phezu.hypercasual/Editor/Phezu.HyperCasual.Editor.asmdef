@@ -1,0 +1,18 @@
+{
+    "name": "Phezu.HyperCasual.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:c5576d858d67f1c42b7c4fbf7f220116"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [
+        "Editor"
+    ],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -12,6 +12,7 @@ namespace Phezu.HyperCasualTemplate {
     public class HcInputManager : Singleton<HcInputManager> {
 
         [SerializeField] private GraphicRaycaster m_UIRaycaster;
+        [SerializeField] private string[] m_HudButtons;
 
         public delegate void PrimaryInput(Vector2 position, float time);
         public event PrimaryInput OnPrimaryDown;
@@ -28,6 +29,10 @@ namespace Phezu.HyperCasualTemplate {
         private void Awake() {
             m_GameInput = new();
             m_PointerData = new(EventSystem.current);
+
+            if (m_HudButtons == null)
+                return;
+            m_HudButtonsState = new bool[m_HudButtons.Length];
         }
 
         private void OnEnable() {
@@ -39,11 +44,59 @@ namespace Phezu.HyperCasualTemplate {
         }
 
         private void Start() {
+#if UNITY_EDITOR
+            for (int i = 0; i < m_HudButtons.Length; i++)
+                m_DebugInputs.Add(false);
+#endif
+
             m_GameInput.PlayerControls.PrimaryDown.started += ctx => OnPrimaryDownRaw(ctx);
             m_GameInput.PlayerControls.PrimaryDown.canceled += ctx => OnPrimaryUpRaw(ctx);
 
             m_Camera = Camera.main;
         }
+
+        #region HUD Buttons
+
+#if UNITY_EDITOR
+
+        [SerializeField] private List<bool> m_DebugInputs;
+
+        private void Update() {
+            for (int i = 0; i < m_DebugInputs.Count; i++)
+                m_DebugInputs[i] = m_HudButtonsState[i];
+        }
+#endif
+
+        public string[] HudButtons {
+            get {
+                string[] result = new string[m_HudButtons.Length];
+                for (int i = 0; i < result.Length; i++)
+                    result[i] = m_HudButtons[i];
+                return result;
+            }
+        }
+
+        private bool[] m_HudButtonsState;
+
+        public void SetHudButton(int hudButtonIndex, bool state) {
+            m_HudButtonsState[hudButtonIndex] = state;
+        }
+
+        public bool GetHudButton(int hudButtonIndex) {
+            return m_HudButtonsState[hudButtonIndex];
+        }
+
+        public bool[] GetHudButtons() {
+            bool[] buttons = new bool[m_HudButtonsState.Length];
+
+            for (int i = 0; i < buttons.Length; i++) {
+                buttons[i] = m_HudButtonsState[i];
+            }
+
+            return buttons;
+        }
+
+        #endregion
 
         private void OnPrimaryDownRaw(InputAction.CallbackContext context) {
             if (IsPointerOverUI()) {
@@ -71,12 +124,31 @@ namespace Phezu.HyperCasualTemplate {
             OnPrimaryUp?.Invoke(worldPos, (float)context.time);
         }
 
-        public Vector2 GetPrimaryPosition() {
+        public Vector3 GetPrimaryWorldPosition() {
             Vector3 worldPos = m_GameInput.PlayerControls.PrimaryPosition.ReadValue<Vector2>();
             worldPos.z = m_Camera.nearClipPlane;
             worldPos = m_Camera.ScreenToWorldPoint(worldPos);
 
             return worldPos;
+        }
+
+        /// <summary>
+        /// Does not take safe area into account. (0, 0) => bottom left, (Screen.width, Screen.height) => top right
+        /// </summary>
+        public Vector2 GetPrimaryScreenPosition() {
+            return m_GameInput.PlayerControls.PrimaryPosition.ReadValue<Vector2>();
+        }
+
+        /// <summary>
+        /// Does not take safe area into account. (0, 0) => bottom left, (1, 1) => top right
+        /// </summary>
+        public Vector2 GetPrimaryNormalizedScreenPosition() {
+            var screenPos = GetPrimaryScreenPosition();
+
+            screenPos.x /= Screen.width;
+            screenPos.y /= Screen.height;
+
+            return screenPos;
         }
 
         private bool IsPointerOverUI() {
