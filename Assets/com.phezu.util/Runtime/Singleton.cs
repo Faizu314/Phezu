@@ -9,9 +9,8 @@ namespace Phezu.Util
     /// </summary>
     public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
-        // Check to see if we're about to be destroyed.
         private static bool m_ShuttingDown = false;
-        private static object m_Lock = new object();
+        private static object m_Lock = new();
         private static T m_Instance;
 
         public static T Instance
@@ -29,19 +28,11 @@ namespace Phezu.Util
                 {
                     if (m_Instance == null)
                     {
-                        // Search for existing instance.
                         m_Instance = (T)FindObjectOfType(typeof(T));
 
-                        // Create new instance if one doesn't already exist.
-                        if (m_Instance == null)
+                        if (m_Instance == null && Application.isPlaying)
                         {
-                            // Need to create a new GameObject to attach the singleton to.
-                            var singletonObject = new GameObject();
-                            m_Instance = singletonObject.AddComponent<T>();
-                            singletonObject.name = typeof(T).ToString() + "- (Singleton)";
-
-                            // Make instance persistent.
-                            DontDestroyOnLoad(singletonObject);
+                            Debug.Log("Could not find singleton instance, typeof: " + typeof(T) + " , returning null");
                         }
                     }
 
@@ -50,13 +41,12 @@ namespace Phezu.Util
             }
         }
 
-
-        private void OnApplicationQuit()
+        protected virtual void OnApplicationQuit()
         {
             m_ShuttingDown = true;
         }
 
-        private void OnDestroy()
+        protected virtual void OnDestroy()
         {
             m_ShuttingDown = true;
         }

@@ -1,5 +1,6 @@
 ﻿using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace Phezu.HyperCasualTemplate.Editor {
 
@@ -12,7 +13,14 @@ namespace Phezu.HyperCasualTemplate.Editor {
                 return;
             }
 
-            var buttons = InputManager.Instance.HudButtons;
+            if (HcInputManager.Instance != null)
+                DisplayHudButtonsEnum(position, property, label);
+            else
+                DisplayDefaultInteger(position, property, label);
+        }
+
+        private void DisplayHudButtonsEnum(Rect position, SerializedProperty property, GUIContent label) {
+            var buttons = HcInputManager.Instance.HudButtons;
 
             GUIContent[] options = new GUIContent[buttons.Length];
 
@@ -23,8 +31,32 @@ namespace Phezu.HyperCasualTemplate.Editor {
 
             property.intValue = EditorGUI.Popup(position, label, property.intValue, options);
 
+            EditorGUI.EndProperty();
+        }
+
+        private void DisplayDefaultInteger(Rect position, SerializedProperty property, GUIContent label) {
+            Rect intField = position;
+            intField.height /= 2f;
+
+            EditorGUI.BeginProperty(intField, label, property);
+
+            property.intValue = EditorGUI.IntField(intField, label, property.intValue);
 
             EditorGUI.EndProperty();
+
+            Rect logPos = intField;
+            logPos.y += intField.height + 2f;
+
+            EditorGUI.LabelField(logPos, "Could not find HcInputManager to display HUD buttons");
+        }
+
+        public override float GetPropertyHeight(SerializedProperty property, GUIContent label) {
+            float defaultHeight = base.GetPropertyHeight(property, label);
+            if (HcInputManager.Instance == null) {
+                return (defaultHeight * 2f) + 2f;
+            }
+            else
+                return defaultHeight;
         }
     }
 }
