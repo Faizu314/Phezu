@@ -5,6 +5,7 @@ using Phezu.Util;
 
 namespace Phezu.SceneManagement {
 
+    [AddComponentMenu("Phezu/Scene Management/Async Scene Loader")]
     public class AsyncSceneLoader : Singleton<AsyncSceneLoader> {
 
         private bool isloading;

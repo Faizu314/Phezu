@@ -7,6 +7,7 @@ using Phezu.SceneManagement;
 namespace Phezu.HyperCasualTemplate {
 
     [DefaultExecutionOrder(-1)]
+    [AddComponentMenu("Phezu/Hyper Casual Template/Game Manager")]
     public class HcGameManager : Singleton<HcGameManager> {
 
         public GameLevels GameLevels;

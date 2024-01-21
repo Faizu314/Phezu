@@ -6,6 +6,7 @@ namespace Phezu.Util {
     /// Delegates the call to OnTrigger2D for this object to another object.
     /// </summary>
     [RequireComponent(typeof(Collider2D))]
+    [AddComponentMenu("Phezu/Utilities/On Trigger Delegator 2D")]
     public class OnTriggerDelegator2D : MonoBehaviour {
         private Collider2D caller;
 

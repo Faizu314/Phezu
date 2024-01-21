@@ -2,6 +2,7 @@
 
 namespace Phezu.HyperCasualTemplate {
 
+    [AddComponentMenu("Phezu/Hyper Casual Template/Tap Detector")]
     public class HcTapDetector : MonoBehaviour {
 
         private HcInputManager m_InputManager;
