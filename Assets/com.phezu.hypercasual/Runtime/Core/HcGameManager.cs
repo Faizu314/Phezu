@@ -10,17 +10,15 @@ namespace Phezu.HyperCasualTemplate {
     [AddComponentMenu("Phezu/Hyper Casual Template/Game Manager")]
     public class HcGameManager : Singleton<HcGameManager> {
 
-        public GameLevels GameLevels;
-
-        [SerializeField] private GameScenes m_GameScenes;
+        [SerializeField] protected GameScenes m_GameScenes;
         [SerializeField] private int m_TargetFrameRate = 30;
 
 #if UNITY_EDITOR
         [SerializeField] private bool Test;
 #endif
 
-        private HcGameStateMachine m_StateMachine;
-        private AsyncSceneLoader m_SceneLoader;
+        protected HcGameStateMachine m_StateMachine;
+        protected AsyncSceneLoader m_SceneLoader;
 
         protected int m_CurrentLevel = -1;
         public int CurrentLevel => m_CurrentLevel;
@@ -42,7 +40,7 @@ namespace Phezu.HyperCasualTemplate {
         }
 
         public virtual bool CanProceedToNextLevel() {
-            return m_CurrentLevel + 1 < GameLevels.Levels.Count;
+            return true;
         }
 
         public void SubscribeToGameStateMachine(HcGameStateListener listener) {

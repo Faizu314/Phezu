@@ -8,6 +8,7 @@ namespace Phezu.HyperCasualTemplate {
         private HcGameState m_PrevState;
 
         public HcGameState CurrState => m_CurrState;
+        public HcGameState PrevState => m_PrevState;
 
         public HcGameStateMachine() {
             m_Listeners = new();
