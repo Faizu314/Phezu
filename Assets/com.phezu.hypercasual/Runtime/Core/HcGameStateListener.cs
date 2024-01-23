@@ -8,6 +8,8 @@ namespace Phezu.HyperCasualTemplate {
         protected HcGameState m_CurrentState;
         protected HcGameState m_PrevState;
 
+        public virtual int Order => 0;
+
         protected virtual void Awake() {
             if (HcGameManager.Instance == null)
                 return;
