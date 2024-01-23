@@ -5,12 +5,16 @@ namespace Phezu.HyperCasualTemplate {
     public class HcGameStateListener : MonoBehaviour {
 
         private bool m_IsSubbed = false;
+        protected HcGameState m_CurrentState;
+        protected HcGameState m_PrevState;
 
         protected virtual void Awake() {
             if (HcGameManager.Instance == null)
                 return;
             HcGameManager.Instance.SubscribeToGameStateMachine(this);
             m_IsSubbed = true;
+            m_CurrentState = HcGameState.Initializing;
+            m_PrevState = HcGameState.Initializing;
         }
 
         protected virtual void OnDestroy() {
@@ -19,6 +23,9 @@ namespace Phezu.HyperCasualTemplate {
         }
 
         public virtual void OnGameStateChanged(HcGameState curr, HcGameState prev) {
+            m_CurrentState = curr;
+            m_PrevState = prev;
+
             switch (curr) {
                 case HcGameState.Initializing:
                     OnInitialization();
