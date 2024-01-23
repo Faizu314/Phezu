@@ -3,8 +3,8 @@ using UnityEngine.EventSystems;
 
 namespace Phezu.HyperCasualTemplate {
 
-    [AddComponentMenu("Phezu/Hyper Casual Template/Hud Button")]
-    public class HudButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
+    [AddComponentMenu("Phezu/Hyper Casual Template/UI/Hc Hud Button")]
+    public class HcHudButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
 
         [HudButton] public int m_ButtonType;
 

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Phezu.HyperCasualTemplate {
 
-    [AddComponentMenu("Phezu/Hyper Casual Template/Swipe Detector")]
+    [AddComponentMenu("Phezu/Hyper Casual Template/Input/Hc Swipe Detector")]
     public class HcSwipeDetection : MonoBehaviour {
         [SerializeField] private float m_MinDistance;
         [SerializeField] private float m_MinDuration;

@@ -2,7 +2,7 @@
 
 namespace Phezu.HyperCasualTemplate {
 
-    [AddComponentMenu("Phezu/Hyper Casual Template/Raise Game Event")]
+    [AddComponentMenu("Phezu/Hyper Casual Template/UI/Hc Raise Game Event")]
     public class HcRaiseGameEvent : MonoBehaviour {
 
         private enum Event {

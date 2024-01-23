@@ -5,7 +5,7 @@ using Phezu.Audio;
 namespace Phezu.HyperCasualTemplate {
 
     [RequireComponent(typeof(Button))]
-    [AddComponentMenu("Phezu/Hyper Casual Template/Button Press Sound")]
+    [AddComponentMenu("Phezu/Hyper Casual Template/UI/Hc Button Press Sound")]
     public class HcButtonPressSound : MonoBehaviour
     {
         [SerializeField] private Sound m_OnPressSound;

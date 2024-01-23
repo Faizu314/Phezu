@@ -8,7 +8,7 @@ using System.Collections.Generic;
 namespace Phezu.HyperCasualTemplate {
 
     [DefaultExecutionOrder(-1)]
-    [AddComponentMenu("Phezu/Hyper Casual Template/Input Manager")]
+    [AddComponentMenu("Phezu/Hyper Casual Template/Input/Hc Input Manager")]
     public class HcInputManager : Singleton<HcInputManager> {
 
         [SerializeField] private GraphicRaycaster m_PauseMenuRaycaster;

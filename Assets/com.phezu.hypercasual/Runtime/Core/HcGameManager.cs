@@ -7,14 +7,14 @@ using Phezu.SceneManagement;
 namespace Phezu.HyperCasualTemplate {
 
     [DefaultExecutionOrder(-1)]
-    [AddComponentMenu("Phezu/Hyper Casual Template/Game Manager")]
+    [AddComponentMenu("Phezu/Hyper Casual Template/Core/Hc Game Manager")]
     public class HcGameManager : Singleton<HcGameManager> {
 
         [SerializeField] protected GameScenes m_GameScenes;
         [SerializeField] private int m_TargetFrameRate = 30;
 
 #if UNITY_EDITOR
-        [SerializeField] private bool Test;
+        [SerializeField] protected bool Test;
 #endif
 
         protected HcGameStateMachine m_StateMachine;

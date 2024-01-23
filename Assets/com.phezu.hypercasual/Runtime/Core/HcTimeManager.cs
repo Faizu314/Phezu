@@ -4,7 +4,7 @@ using Phezu.Util;
 
 namespace Phezu.HyperCasualTemplate {
 
-    [AddComponentMenu("Phezu/Hyper Casual Template/Time Manager")]
+    [AddComponentMenu("Phezu/Hyper Casual Template/Core/Hc Time Manager")]
     public class HcTimeManager : Singleton<HcTimeManager> {
 
         [SerializeField] private float m_LerpTime;
