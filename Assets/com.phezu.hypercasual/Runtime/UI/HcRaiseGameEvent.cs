@@ -2,7 +2,8 @@
 
 namespace Phezu.HyperCasualTemplate {
 
-    public class RaiseGameEvent : MonoBehaviour {
+    [AddComponentMenu("Phezu/Hyper Casual Template/Raise Game Event")]
+    public class HcRaiseGameEvent : MonoBehaviour {
 
         private enum Event {
             OnLose,
