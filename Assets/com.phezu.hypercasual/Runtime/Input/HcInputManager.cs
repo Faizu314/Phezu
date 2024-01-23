@@ -11,7 +11,7 @@ namespace Phezu.HyperCasualTemplate {
     [AddComponentMenu("Phezu/Hyper Casual Template/Input Manager")]
     public class HcInputManager : Singleton<HcInputManager> {
 
-        [SerializeField] private GraphicRaycaster m_UIRaycaster;
+        [SerializeField] private GraphicRaycaster m_PauseMenuRaycaster;
         [SerializeField] private string[] m_HudButtons;
 
         public delegate void PrimaryInput(Vector2 position, float time);
@@ -164,10 +164,10 @@ namespace Phezu.HyperCasualTemplate {
 
                 overHUD = m_Results.Count > 0;
             }
-            if (m_UIRaycaster != null) {
+            if (m_PauseMenuRaycaster != null) {
                 m_Results.Clear();
 
-                m_UIRaycaster.Raycast(m_PointerData, m_Results);
+                m_PauseMenuRaycaster.Raycast(m_PointerData, m_Results);
 
                 overPauseMenu = m_Results.Count > 0;
             }
