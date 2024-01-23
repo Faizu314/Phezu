@@ -60,7 +60,7 @@ namespace Phezu.SceneManagement {
             SceneManager.SetActiveScene(scene);
         }
 
-        private void OnDestroy() {
+        protected override void OnDestroy() {
             SceneManager.sceneLoaded -= SetActiveScene;
         }
     }

@@ -53,7 +53,8 @@ namespace Phezu.Util {
 
             mSelectedIndex = EditorGUI.Popup(position, label, GetSelectedIndex(property.stringValue), options);
 
-            property.stringValue = options[mSelectedIndex].text.Trim();
+            if (SceneNames.Length != 0)
+                property.stringValue = options[mSelectedIndex].text.Trim();
 
             EditorGUI.EndProperty();
         }

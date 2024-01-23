@@ -51,14 +51,14 @@ namespace Phezu.HyperCasualTemplate {
             m_StateMachine.Unsubscribe(listener);
         }
 
-        #region Private Methods
-
-        protected IEnumerator Init_Co() {
+        protected virtual IEnumerator Init_Co() {
             yield return m_SceneLoader.LoadSceneAdditive(m_GameScenes.MainMenuScene);
 
             m_StateMachine.SetState(HcGameState.MainMenu);
             CurrentState = HcGameState.MainMenu;
         }
+
+        #region Private Methods
 
         private IEnumerator LoadScene(string sceneName) {
             m_CurrentLevel = -1;
