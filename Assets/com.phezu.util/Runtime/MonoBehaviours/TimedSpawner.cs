@@ -10,6 +10,9 @@ namespace Phezu.Util
         private ObjectPool<GameObject> mObjectPool;
         private Dictionary<GameObject, float> mTimers;
 
+        /// <summary>
+        /// Spawns objects and returns them to the pool after their lifetime runs out.
+        /// </summary>
         public TimedSpawner(GameObject prefab, Action<GameObject> onCreate = null, Action<GameObject> onGet = null, Action<GameObject> onRelease = null, float activeDurationInSecs = 1f, int poolSize = 10)
         {
             //This is to make sure the OnEnable function does not get called on Instantiation
