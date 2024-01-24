@@ -5,7 +5,7 @@
   "description": "General system that keeps track of player's finance and accounting.",
   "unity": "2021.3",
   "dependencies": {
-    "com.phezu.util": "1.0.28",
+    "com.phezu.util": "1.0.29",
     "com.unity.purchasing": "4.4.1",
     "com.unity.services.cloudsave": "2.0.1",
     "com.unity.services.core": "1.4.0",

@@ -5,7 +5,7 @@
   "description": "Its a weapon system.",
   "unity": "2021.3",
   "dependencies": {
-    "com.phezu.util": "1.0.28",
+    "com.phezu.util": "1.0.29",
     "com.phezu.effectorsystem": "0.0.5"
   },
   "author": {

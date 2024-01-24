@@ -1,11 +1,11 @@
 {
   "name": "com.phezu.scenemanagement",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "displayName": "Scene Management System",
   "description": "Its a scene management system.",
   "unity": "2021.3",
   "dependencies": {
-    "com.phezu.util": "1.0.28"
+    "com.phezu.util": "1.0.29"
   },
   "author": {
     "name": "Phezu"
