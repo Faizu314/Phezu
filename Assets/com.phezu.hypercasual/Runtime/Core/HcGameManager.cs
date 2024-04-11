@@ -196,6 +196,35 @@ namespace Phezu.HyperCasualTemplate {
         public static event Action OnPause;
         public static event Action OnResume;
 
+
+        protected void InvokeOnLeveLStart() {
+            OnLevelStart?.Invoke();
+        }
+
+        protected void InvokeOnLevelRestart() {
+            OnLevelRestart?.Invoke();
+        }
+
+        protected void InvokeOnLevelEnd() {
+            OnLevelEnd?.Invoke();
+        }
+
+        protected void InvokeOnLose() {
+            OnLose?.Invoke();
+        }
+
+        protected void InvokeOnWin() {
+            OnWin?.Invoke();
+        }
+
+        protected void InvokeOnPause() {
+            OnPause?.Invoke();
+        }
+
+        protected void InvokeOnResume() {
+            OnResume?.Invoke();
+        }
+
         #endregion
     }
 }

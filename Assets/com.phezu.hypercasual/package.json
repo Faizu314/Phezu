@@ -1,6 +1,6 @@
 {
   "name": "com.phezu.hypercasual",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "displayName": "Hyper Casual Template",
   "description": "This package has a specific template for hyper casual games.",
   "unity": "2021.3",
