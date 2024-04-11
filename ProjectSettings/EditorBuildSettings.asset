@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Tests/HyperCasualTest/TestCore.unity
+    guid: 2cf10c540b9c3024190fdc3f1a3f8a61
+  - enabled: 1
+    path: Assets/Tests/HyperCasualTest/TestMenu.unity
+    guid: fc418dd6a82f14e4eb6fb7bccc6acf1b
+  - enabled: 1
+    path: Assets/Tests/HyperCasualTest/TestLevel.unity
+    guid: 1542595c52be79a4998ac0bfc5774a59
   m_configObjects: {}
