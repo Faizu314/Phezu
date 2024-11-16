@@ -17,7 +17,7 @@ namespace Phezu.Util
         {
             get
             {
-                if (m_ShuttingDown)
+                if (Application.isPlaying && m_ShuttingDown)
                 {
                     Debug.LogWarning("[Singleton] Instance '" + typeof(T) +
                         "' already destroyed. Returning null.");
